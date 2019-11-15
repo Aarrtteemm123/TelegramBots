@@ -95,7 +95,7 @@ class ImageTool(object):
 
     @staticmethod
     def solarize(img, threshold):
-        return ImageOps.solarize(img, threshold)
+        return ImageOps.solarize(img, int(threshold))
 
     @staticmethod
     def invert(img):
@@ -117,10 +117,10 @@ class ImageTool(object):
 
 
 '''
-    R:r-50;
-    G:g-50;
-    B:b-50;
-    A:a-0.2
+R:r-50;
+G:g-50;
+B:b-50;
+A:a-0.2
 
 hello - information about the bot
 help - please,read this
