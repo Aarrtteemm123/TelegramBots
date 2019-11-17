@@ -7,13 +7,14 @@ bot = telebot.TeleBot("1002702968:AAFwE3-tvk8Cnv_6usaWZAAwAKwaNrsx4BE")
 
 user_list = {}
 
+
 @bot.message_handler(commands=['sec_img'])
 def sec_img_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/sec-img.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             bot.send_message(message.chat.id, "Ok,send me your second photo")
             user_list[message.chat.id].fl_second_img = True
     else:
@@ -115,7 +116,7 @@ def pixeling_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/pixeling.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 koef = re.split(r'\W| ', str(user_list[message.chat.id].parameter))
@@ -133,7 +134,7 @@ def mixing_pixels_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/mixing-pixels.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -152,7 +153,7 @@ def filter_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/filter.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -171,7 +172,7 @@ def blur_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/blur.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -190,7 +191,7 @@ def unsharp_mask_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/mask.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -210,7 +211,7 @@ def rank_filter_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/rank-filter.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -229,7 +230,7 @@ def rotate_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/rotate.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -248,7 +249,7 @@ def mirror_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/mirror.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -266,7 +267,7 @@ def solarize_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/solorize.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -285,7 +286,7 @@ def invert_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/invert.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 bot.send_message(message.chat.id, "please,wait...")
                 img = Image.open(user_list[message.chat.id].filename)
@@ -303,7 +304,7 @@ def composite_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/composite.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 img = Image.open(user_list[message.chat.id].filename)
                 img2 = Image.open(user_list[message.chat.id].filename2)
@@ -322,7 +323,7 @@ def gradient_composite_command(message):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("example_photo/gradient-composite.png", 'rb'))
             user_list[message.chat.id].help = False
-        else :
+        else:
             try:
                 img = Image.open(user_list[message.chat.id].filename)
                 img2 = Image.open(user_list[message.chat.id].filename2)
