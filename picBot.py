@@ -10,8 +10,12 @@ user_list = {}
 @bot.message_handler(commands=['sec_img'])
 def sec_img_command(message):
     if user_list.__contains__(message.chat.id):
-        bot.send_message(message.chat.id, "Ok,send me your second photo")
-        user_list[message.chat.id].fl_second_img = True
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/sec-img.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            bot.send_message(message.chat.id, "Ok,send me your second photo")
+            user_list[message.chat.id].fl_second_img = True
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -37,7 +41,12 @@ def math_command(message):
                                           "log - math.log(x,base)\n"
                                           "e³ - math.exp(3)\n"
                                           "a² - a**b or math.pow(a,2)\n"
-                                          "a! - math.factorial(a)")
+                                          "a! - math.factorial(a)\n"
+                                          "Format:\n"
+                                          "R:r+50;\n"
+                                          "G:g*0.2;\n"
+                                          "B:b-20;\n"
+                                          "A:a-0.2")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -45,7 +54,22 @@ def math_command(message):
 @bot.message_handler(commands=['help'])
 def help_command(message):
     if user_list.__contains__(message.chat.id):
-        bot.send_message(message.chat.id, "under development...")
+        user_list[message.chat.id].help = True
+        bot.send_message(message.chat.id, "Select command")
+        string = "/pixeling - add pixel effect to photo\n" \
+                 "/mixing_pixels - random mix pixel from your photo\n" \
+                 "/filter - set every pixel by function\n" \
+                 "/blur - add blur effect to photo\n" \
+                 "/unsharp_mask - increase subjective image clarity\n" \
+                 "/rank_filter - add point effect\n" \
+                 "/rotate - rotate photo on x degree\n" \
+                 "/mirror - create mirror copy your image\n" \
+                 "/solarize - invert selected pixels\n" \
+                 "/invert - invert color pixels\n" \
+                 "/composite - overlay 2 pictures\n" \
+                 "/gradient_composite - composite with gradient\n" \
+                 "/sec_img - you can load second image for some commands"
+        bot.send_message(message.chat.id, string)
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -88,13 +112,17 @@ def commands_command(message):
 @bot.message_handler(commands=['pixeling'])
 def pixeling_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            koef = re.split(r'\W| ', str(user_list[message.chat.id].parameter))
-            new_img = ImageTool.pixeling(Image.open(user_list[message.chat.id].filename), koef[0], koef[1])
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/pixeling.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                koef = re.split(r'\W| ', str(user_list[message.chat.id].parameter))
+                new_img = ImageTool.pixeling(Image.open(user_list[message.chat.id].filename), koef[0], koef[1])
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -102,14 +130,18 @@ def pixeling_command(message):
 @bot.message_handler(commands=['mixing_pixels'])
 def mixing_pixels_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            parameter = user_list[message.chat.id].parameter
-            new_img = ImageTool.mixing_pixels(img, parameter)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/mixing-pixels.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                parameter = user_list[message.chat.id].parameter
+                new_img = ImageTool.mixing_pixels(img, parameter)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -117,14 +149,18 @@ def mixing_pixels_command(message):
 @bot.message_handler(commands=['filter'])
 def filter_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            parameter = user_list[message.chat.id].parameter
-            new_img = ImageTool.set_pixels_by_function(img, parameter)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/filter.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                parameter = user_list[message.chat.id].parameter
+                new_img = ImageTool.set_pixels_by_function(img, parameter)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -132,14 +168,18 @@ def filter_command(message):
 @bot.message_handler(commands=['blur'])
 def blur_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            parameter = user_list[message.chat.id].parameter
-            new_img = ImageTool.blur(img, parameter)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/blur.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                parameter = user_list[message.chat.id].parameter
+                new_img = ImageTool.blur(img, parameter)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -147,15 +187,19 @@ def blur_command(message):
 @bot.message_handler(commands=['unsharp_mask'])
 def unsharp_mask_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            parameter = user_list[message.chat.id].parameter
-            list_param = re.split("\W| ", str(parameter))
-            new_img = ImageTool.unsharp_mask(img, list_param[0], list_param[1], list_param[2])
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/mask.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                parameter = user_list[message.chat.id].parameter
+                list_param = re.split("\W| ", str(parameter))
+                new_img = ImageTool.unsharp_mask(img, list_param[0], list_param[1], list_param[2])
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -163,14 +207,18 @@ def unsharp_mask_command(message):
 @bot.message_handler(commands=['rank_filter'])
 def rank_filter_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            parameter = user_list[message.chat.id].parameter
-            new_img = ImageTool.rank_filter(img, 9, parameter)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/rank-filter.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                parameter = user_list[message.chat.id].parameter
+                new_img = ImageTool.rank_filter(img, 9, parameter)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -178,14 +226,18 @@ def rank_filter_command(message):
 @bot.message_handler(commands=['rotate'])
 def rotate_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            parameter = user_list[message.chat.id].parameter
-            new_img = ImageTool.rotate(img, parameter)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/rotate.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                parameter = user_list[message.chat.id].parameter
+                new_img = ImageTool.rotate(img, parameter)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -193,13 +245,17 @@ def rotate_command(message):
 @bot.message_handler(commands=['mirror'])
 def mirror_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            new_img = ImageTool.mirror(img)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "please,upload image")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/mirror.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                new_img = ImageTool.mirror(img)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "please,upload image")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -207,14 +263,18 @@ def mirror_command(message):
 @bot.message_handler(commands=['solarize'])
 def solarize_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            parameter = user_list[message.chat.id].parameter
-            new_img = ImageTool.solarize(img, parameter)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/solorize.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                parameter = user_list[message.chat.id].parameter
+                new_img = ImageTool.solarize(img, parameter)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "Incorrect data or image not uploaded :(")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -222,13 +282,17 @@ def solarize_command(message):
 @bot.message_handler(commands=['invert'])
 def invert_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            new_img = ImageTool.invert(img)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "please,upload image")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/invert.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                bot.send_message(message.chat.id, "please,wait...")
+                img = Image.open(user_list[message.chat.id].filename)
+                new_img = ImageTool.invert(img)
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "please,upload image")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -236,14 +300,18 @@ def invert_command(message):
 @bot.message_handler(commands=['composite'])
 def composite_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            img2 = Image.open(user_list[message.chat.id].filename2)
-            new_img = ImageTool.composite(img, img2)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "please,upload second image")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/composite.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                img = Image.open(user_list[message.chat.id].filename)
+                img2 = Image.open(user_list[message.chat.id].filename2)
+                new_img = ImageTool.composite(img, img2)
+                bot.send_message(message.chat.id, "please,wait...")
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "please,upload second image /sec_img")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 
@@ -251,14 +319,18 @@ def composite_command(message):
 @bot.message_handler(commands=['gradient_composite'])
 def gradient_composite_command(message):
     if user_list.__contains__(message.chat.id):
-        try:
-            bot.send_message(message.chat.id, "please,wait...")
-            img = Image.open(user_list[message.chat.id].filename)
-            img2 = Image.open(user_list[message.chat.id].filename2)
-            new_img = ImageTool.gradient_composite(img, img2)
-            processing_result(message, new_img)
-        except:
-            bot.send_message(message.chat.id, "please,upload image")
+        if user_list[message.chat.id].help:
+            bot.send_photo(message.chat.id, open("example_photo/gradient-composite.png", 'rb'))
+            user_list[message.chat.id].help = False
+        else :
+            try:
+                img = Image.open(user_list[message.chat.id].filename)
+                img2 = Image.open(user_list[message.chat.id].filename2)
+                new_img = ImageTool.gradient_composite(img, img2)
+                bot.send_message(message.chat.id, "please,wait...")
+                processing_result(message, new_img)
+            except:
+                bot.send_message(message.chat.id, "please,upload second image /sec_img")
     else:
         bot.send_message(message.chat.id, "Click on this command /start")
 

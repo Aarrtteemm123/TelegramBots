@@ -4,3 +4,4 @@ class User(object):
         self.filename1 = ""
         self.filename2 = ""
         self.fl_second_img = False
+        self.help = False

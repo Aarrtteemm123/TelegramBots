@@ -134,7 +134,7 @@ unsharp_mask - increase subjective image clarity
 rank_filter - add point effect
 rotate - rotate photo on x degree
 mirror - create mirror copy your image
-solarize - invert selected pixels
+solarize - invert some pixels
 invert - invert color pixels
 composite - overlay 2 pictures
 gradient_composite - composite with gradient
