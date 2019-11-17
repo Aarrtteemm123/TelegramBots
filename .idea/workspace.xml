@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85f2ec25-a9fd-40b0-8bc0-8909c3015fbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Image.py" beforeDir="false" afterPath="$PROJECT_DIR$/Image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/picBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/picBot.py" afterDir="false" />
-    </list>
+    <list default="true" id="85f2ec25-a9fd-40b0-8bc0-8909c3015fbc" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +36,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="ProjectId" id="1TbWxVA5VIfo35jBpyCuC4hbFFf" />
   <component name="PropertiesComponent">
@@ -158,6 +154,7 @@
       <workItem from="1573825124076" duration="9889000" />
       <workItem from="1573992535595" duration="48000" />
       <workItem from="1573992720736" duration="4005000" />
+      <workItem from="1574014053266" duration="240000" />
     </task>
     <task id="LOCAL-00001" summary="Rebuild">
       <created>1573729880645</created>
