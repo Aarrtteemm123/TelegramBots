@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85f2ec25-a9fd-40b0-8bc0-8909c3015fbc" name="Default Changelist" comment="" />
+    <list default="true" id="85f2ec25-a9fd-40b0-8bc0-8909c3015fbc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_photo/pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roadmap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/picBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/picBot.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +50,19 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/download_photo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER_ARTEM\Desktop\Python\TelegramBots\pictureBot\download_photo" />
+      <recent name="C:\Users\USER_ARTEM\Desktop\Python\TelegramBots\pictureBot" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -154,7 +168,8 @@
       <workItem from="1573825124076" duration="9889000" />
       <workItem from="1573992535595" duration="48000" />
       <workItem from="1573992720736" duration="4005000" />
-      <workItem from="1574014053266" duration="240000" />
+      <workItem from="1574014053266" duration="461000" />
+      <workItem from="1574078646141" duration="2447000" />
     </task>
     <task id="LOCAL-00001" summary="Rebuild">
       <created>1573729880645</created>
@@ -170,7 +185,56 @@
       <option name="project" value="LOCAL" />
       <updated>1573842315964</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add user model,bug fix">
+      <created>1574014300155</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574014300155</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add configuration file">
+      <created>1574078926512</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574078926512</updated>
+    </task>
+    <task id="LOCAL-00005" summary="rebuild">
+      <created>1574079117093</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574079117093</updated>
+    </task>
+    <task id="LOCAL-00006" summary="rebuild">
+      <created>1574080108887</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574080108887</updated>
+    </task>
+    <task id="LOCAL-00007" summary="rebuild">
+      <created>1574080405553</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574080405553</updated>
+    </task>
+    <task id="LOCAL-00008" summary="rebuild">
+      <created>1574080615245</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574080615245</updated>
+    </task>
+    <task id="LOCAL-00009" summary="rebuild">
+      <created>1574080955713</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574080955713</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,8 +255,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Rebuild" />
-    <MESSAGE value="Add user model,bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user model,bug fix" />
+    <MESSAGE value="bug fix" />
+    <MESSAGE value="add configuration file" />
+    <MESSAGE value="rebuild" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TelegramBots$picBot.coverage" NAME="picBot Coverage Results" MODIFIED="1573729835492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

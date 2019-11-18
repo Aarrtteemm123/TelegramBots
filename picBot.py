@@ -114,7 +114,8 @@ def commands_command(message):
 def pixeling_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/pixeling.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/pixeling.PNG", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/gradation_h.jpg", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
