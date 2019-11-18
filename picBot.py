@@ -12,7 +12,7 @@ user_list = {}
 def sec_img_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/sec-img.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/sec-img.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             bot.send_message(message.chat.id, "Ok,send me your second photo")
@@ -115,7 +115,6 @@ def pixeling_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
             bot.send_photo(message.chat.id, open("/app/example_photo/pixeling.PNG", 'rb'))
-            bot.send_photo(message.chat.id, open("/app/example_photo/gradation_h.jpg", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -133,7 +132,7 @@ def pixeling_command(message):
 def mixing_pixels_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/mixing-pixels.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/mixing-pixels.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -152,7 +151,7 @@ def mixing_pixels_command(message):
 def filter_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/filter.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/filter.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -171,7 +170,7 @@ def filter_command(message):
 def blur_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/blur.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/blur.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -190,7 +189,7 @@ def blur_command(message):
 def unsharp_mask_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/mask.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/mask.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -210,7 +209,7 @@ def unsharp_mask_command(message):
 def rank_filter_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/rank-filter.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/rank-filter.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -229,7 +228,7 @@ def rank_filter_command(message):
 def rotate_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/rotate.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/rotate.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -248,7 +247,7 @@ def rotate_command(message):
 def mirror_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/mirror.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/mirror.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -266,7 +265,7 @@ def mirror_command(message):
 def solarize_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/solorize.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/solorize.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -285,7 +284,7 @@ def solarize_command(message):
 def invert_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/invert.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/invert.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -303,7 +302,7 @@ def invert_command(message):
 def composite_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/composite.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/composite.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:
@@ -322,7 +321,7 @@ def composite_command(message):
 def gradient_composite_command(message):
     if user_list.__contains__(message.chat.id):
         if user_list[message.chat.id].help:
-            bot.send_photo(message.chat.id, open("example_photo/gradient-composite.png", 'rb'))
+            bot.send_photo(message.chat.id, open("/app/example_photo/gradient-composite.PNG", 'rb'))
             user_list[message.chat.id].help = False
         else:
             try:

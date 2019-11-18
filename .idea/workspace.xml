@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85f2ec25-a9fd-40b0-8bc0-8909c3015fbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/download_photo/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roadmap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image.py" beforeDir="false" afterPath="$PROJECT_DIR$/Image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/picBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/picBot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -169,7 +165,7 @@
       <workItem from="1573992535595" duration="48000" />
       <workItem from="1573992720736" duration="4005000" />
       <workItem from="1574014053266" duration="461000" />
-      <workItem from="1574078646141" duration="2447000" />
+      <workItem from="1574078646141" duration="2787000" />
     </task>
     <task id="LOCAL-00001" summary="Rebuild">
       <created>1573729880645</created>
@@ -234,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574080955713</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="rebuild">
+      <created>1574081105969</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574081105969</updated>
+    </task>
+    <task id="LOCAL-00011" summary="rebuild">
+      <created>1574081144945</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574081144945</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

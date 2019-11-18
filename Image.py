@@ -142,5 +142,3 @@ sec_img - you can load second image for some commands
 math - math operation and functions
 
 '''
-
-
