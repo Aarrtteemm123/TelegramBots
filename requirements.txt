@@ -33,7 +33,7 @@ Routes==2.4.1
 six==1.12.0
 sqlparse==0.3.0
 tk==0.1.0
-urllib3==1.25.6
+urllib3==1.26.5
 var==0.0.0
 wcwidth==0.1.7
 zipp==0.6.0
